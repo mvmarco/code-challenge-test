@@ -138,7 +138,8 @@ export const imagesHandlers = [
   }),
   http.post(`${API_URL}/images`, async ({ request }) => {
     const data = await request.json();
-    imagesList.push(data as Image);
+    // console.log(data);
+    imagesList.unshift(data as Image);
     await delay(5);
     return HttpResponse.json(data, { status: 201 });
   }),

@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Images from '../pages/Images';
+import Images from '../components/pages/images';
+
 
 
 const AppRouter:FC = () => {

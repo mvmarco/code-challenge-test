@@ -9,9 +9,9 @@ import styled from 'styled-components';
 
 import { useCreateImageMutation } from '../../../redux/api/imagesSlice';
 import { SecondaryButton } from '../../atoms/buttons/SecondaryButton';
-import { InputField } from '../../molecules/InputField';
 import { setFormErrors } from '../../../utils/formHelpers';
 import { PrimaryButton } from '../../atoms/buttons/PrimaryButton';
+import { InputField } from '../../molecules/inputField';
 
 const schema = yup
   .object({
@@ -90,9 +90,7 @@ export const NewImageDialog: FC<Props> = ({ open, onClose }) => {
     event.preventDefault();
     void handleSubmit(async (formData) => {
       try {
-        await createImage({
-          data: { ...formData },
-        });
+        await createImage(formData);
         onDialogClose(false);
         toast.success('Image created', {
           position: 'bottom-center',

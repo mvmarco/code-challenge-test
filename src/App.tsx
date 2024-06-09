@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import AppRouter from './components/appRouter';
 import { GlobalStyles } from './styles/GlobalStyles';
+import AppRouter from './appRouter';
 
 
 

@@ -39,7 +39,6 @@ const StyledButton = styled.button<{ size: 'small' | 'large'; option: 'normal' |
   font-weight: 500;
   color: white;
   outline-offset: 2px;
-  outline-color: #0062cc;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
