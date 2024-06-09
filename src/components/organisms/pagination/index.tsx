@@ -2,11 +2,12 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
-interface PaginationProps {
+export interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
 }
+
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -53,14 +54,28 @@ const IconContainer = styled.button`
   }
 `;
 
-
-const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+export const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const generatePageNumbers = () => {
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(i);
+    const delta = 2;
+    const range = [];
+
+    for (let i = Math.max(2, currentPage - delta); i <= Math.min(totalPages - 1, currentPage + delta); i++) {
+      range.push(i);
     }
-    return pageNumbers;
+
+    if (currentPage - delta > 2) {
+      range.unshift('...');
+    }
+    if (currentPage + delta < totalPages - 1) {
+      range.push('...');
+    }
+
+    range.unshift(1);
+    if (totalPages > 1) {
+      range.push(totalPages);
+    }
+
+    return range;
   };
 
   const pageNumbers = generatePageNumbers();
@@ -70,14 +85,18 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange
       <IconContainer onClick={() => onPageChange(currentPage > 1 ? currentPage - 1 : 1)}>
         <ChevronLeftIcon className="w-4 h-4 text-gray-500" />
       </IconContainer>
-      {pageNumbers.slice(Math.max(0, currentPage - 3), currentPage + 2).map((page) => (
-        <PageButton
-          key={page}
-          active={page === currentPage}
-          onClick={() => onPageChange(page)}
-        >
-          {page}
-        </PageButton>
+      {pageNumbers.map((page, index) => (
+        typeof page === 'number' ? (
+          <PageButton
+            key={index}
+            active={page === currentPage}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </PageButton>
+        ) : (
+          <span key={index} style={{ padding: '0.5rem 1rem' }}>{page}</span>
+        )
       ))}
       <IconContainer onClick={() => onPageChange(currentPage < totalPages ? currentPage + 1 : totalPages)}>
         <ChevronRightIcon className="w-4 h-4 text-gray-500" />
@@ -85,5 +104,3 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange
     </PaginationContainer>
   );
 };
-
-export default Pagination;

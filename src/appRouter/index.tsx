@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Images from '../components/pages/images';
+import { Images } from '../components/pages/images';
+
 
 
 

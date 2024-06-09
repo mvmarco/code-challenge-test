@@ -7,11 +7,11 @@ const buttonSizes = {
   small: css`
     height: 2.25rem; 
     font-size: 0.875rem; 
-    padding: 0 1.25rem; /* Adjusted padding for a more rounded look */
+    padding: 0 1.25rem;
   `,
   large: css`
     height: 2.5rem;
-    padding: 0 1.5rem; /* Adjusted padding for a more rounded look */
+    padding: 0 1.5rem;
   `,
 };
 
@@ -19,18 +19,10 @@ const buttonOptions = {
   normal: css`
     color: #3DB2F2; 
     border: none;
-    &:hover {
-      background-color: #E0F7FF; /* Light blue background on hover */
-    }
   `,
   danger: css`
-    &:hover {
-      background-color: #d9534f; 
-      color: white;
-      border-color: #d9534f; 
-    }
     color: #d9534f; 
-    border-color: #d9534f; 
+    border: none;
   `,
 };
 

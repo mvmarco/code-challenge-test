@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { useFetchImagesQuery } from '../../../redux/api/imagesSlice';
 import { Image as ImageType } from '../../../models/image';
 import { ImagesHeader } from './ImagesHeader';
-import ImagesGrid from './ImagesGrid';
-import Pagination from '../../organisms/pagination';
 import { NoResults } from '../../molecules/noResults';
 import { LoadingResults } from '../../molecules/loadingResults';
+import { ImagesGrid } from './ImagesGrid';
+import { Pagination } from '../../organisms/pagination';
 
 const PageContainer = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const ContentContainer = styled.div`
   padding-bottom: 1.5rem;
 `;
 
-const Images: FC = () => {
+export const Images: FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const itemsPerPage = 10;
@@ -74,5 +74,3 @@ const Images: FC = () => {
     </PageContainer>
   );
 };
-
-export default Images;

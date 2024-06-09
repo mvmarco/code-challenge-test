@@ -1,6 +1,7 @@
 import { http, HttpResponse, delay } from "msw";
 
 import { Image } from "../models/image";
+import { API_URL } from "../constants/environment";
 
 const imagesList: Image[] = [
   {
@@ -128,8 +129,6 @@ const imagesList: Image[] = [
 export const generateImagesList = async (): Promise<Array<Image>> => {
   return Promise.resolve(imagesList);
 };
-
-const API_URL = "http://localhost:3000/api";
 
 export const imagesHandlers = [
   http.get(`${API_URL}/images`, async () => {

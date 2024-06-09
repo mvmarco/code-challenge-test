@@ -1,8 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import { Image, NewImage } from "../../models/image";
-
-const API_URL = "http://localhost:3000/api";
+import { API_URL } from "../../constants/environment";
 
 interface ImageResponse {
   data: Image;

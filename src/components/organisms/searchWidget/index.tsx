@@ -2,7 +2,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { ChangeEventHandler, KeyboardEventHandler, useState, FC } from 'react';
 import styled from 'styled-components';
 
-interface SearchWidgetProps {
+export interface SearchWidgetProps {
   className?: string;
   onSearchChange: (query: string) => void;
 }

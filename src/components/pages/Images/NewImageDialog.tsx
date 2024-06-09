@@ -15,15 +15,15 @@ import { InputField } from '../../molecules/inputField';
 
 const schema = yup
   .object({
-    title: yup.string().label('Title').required(),
-    description: yup.string().label('Description').required(),
+    title: yup.string().label('Title').required().max(30, 'Title must be at most 30 characters'),
+    description: yup.string().label('Description').required().max(30, 'Description must be at most 30 characters'),
     imagePath: yup.string().label('Image Path').url().required(),
   })
   .required();
 
 type Inputs = InferType<typeof schema>;
 
-interface Props {
+export interface DialogProps {
   open: boolean;
   onClose: (value: boolean) => void;
 }
@@ -63,11 +63,11 @@ const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 30px
+  margin-top: 30px;
 `;
 
 
-export const NewImageDialog: FC<Props> = ({ open, onClose }) => {
+export const NewImageDialog: FC<DialogProps> = ({ open, onClose }) => {
   const {
     reset: resetForm,
     register,
@@ -149,6 +149,7 @@ export const NewImageDialog: FC<Props> = ({ open, onClose }) => {
                   size="large"
                   type="submit"
                   disabled={isLoading}
+                  aria-label="Add New Image"
                 >
                   Save Changes
                 </PrimaryButton>

@@ -23,7 +23,7 @@ const ErrorMessage = styled.p`
   color: #666;
 `;
 
-interface LoadingProps {
+export interface LoadingProps {
   isLoading: boolean;
   error: boolean;
 }

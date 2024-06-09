@@ -48,7 +48,8 @@ export const ImagesHeader: FC<Props> = ({onSearchChange}) => {
       <Title>Images Management</Title>
       <ActionContainer>
         <SearchWidget className="mb-4" onSearchChange={onSearchChange} />
-        <PrimaryButton type="submit" onClick={openNewImageDialog}>
+        <PrimaryButton type="submit" onClick={openNewImageDialog} aria-label="Save changes"
+        >
           <StyledPlusIcon/>
           Add New Image
         </PrimaryButton>

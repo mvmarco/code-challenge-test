@@ -20,8 +20,8 @@ const StyledInput = styled.input<{ hasError: boolean }>`
   border: 1px solid ${({ hasError }) => (hasError ? 'red' : '#ccc')};
   box-shadow: ${({ hasError }) =>
     hasError ? '0 0 0 1px red' : '0 0 5px rgba(0, 0, 0, 0.1)'};
-  &:hover,
-  &:focus {
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
     border-color: ${({ hasError }) => (hasError ? 'red' : '#3DB2F2')};
     box-shadow: ${({ hasError }) =>
       hasError ? '0 0 0 1px red' : '0 0 8px rgba(0, 0, 0, 0.2)'};

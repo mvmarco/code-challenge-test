@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Image as ImageType } from '../../../models/image';
 
-interface ImagesGridProps {
+export interface ImagesGridProps {
   images: ImageType[];
 }
 
@@ -62,7 +62,7 @@ const ImageLink = styled.a`
   }
 `;
 
-const ImagesGrid: FC<ImagesGridProps> = ({ images }) => {
+export const ImagesGrid: FC<ImagesGridProps> = ({ images }) => {
   return (
     <GridContainer>
       {images.map((image: ImageType) => (
@@ -78,5 +78,3 @@ const ImagesGrid: FC<ImagesGridProps> = ({ images }) => {
     </GridContainer>
   );
 };
-
-export default ImagesGrid;
