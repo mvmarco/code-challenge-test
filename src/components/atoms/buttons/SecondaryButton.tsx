@@ -8,10 +8,21 @@ const buttonSizes = {
     height: 2.25rem; 
     font-size: 0.875rem; 
     padding: 0 1.25rem;
+
+    @media (max-width: 768px) {
+      height: 2rem;
+      font-size: 0.75rem;
+      padding: 0 1rem;
+    }
   `,
   large: css`
     height: 2.5rem;
     padding: 0 1.5rem;
+
+    @media (max-width: 768px) {
+      height: 2.25rem;
+      padding: 0 1.25rem;
+    }
   `,
 };
 
@@ -49,6 +60,16 @@ const StyledButton = styled.button<{
   }
   ${({ size }) => buttonSizes[size]}
   ${({ option }) => buttonOptions[option]}
+
+  @media (max-width: 768px) {
+    border-radius: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 0.75rem;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+  }
 `;
 
 export const SecondaryButton = forwardRef<HTMLButtonElement, ButtonProps>(

@@ -7,11 +7,22 @@ const sizes = {
   small: css`
     height: 2.25rem;
     font-size: 0.875rem;
-    padding: 0 1.25rem; /* Increased padding for a more rounded look */
+    padding: 0 1.25rem;
+
+    @media (max-width: 768px) {
+      height: 2rem;
+      font-size: 0.75rem;
+      padding: 0 1rem;
+    }
   `,
   large: css`
     height: 2.5rem;
-    padding: 0 1.5rem; /* Increased padding for a more rounded look */
+    padding: 0 1.5rem;
+
+    @media (max-width: 768px) {
+      height: 2.25rem;
+      padding: 0 1.25rem;
+    }
   `,
 };
 
@@ -49,6 +60,16 @@ const StyledButton = styled.button<{ size: 'small' | 'large'; option: 'normal' |
 
   ${({ size }) => sizes[size]}
   ${({ option }) => options[option]}
+
+  @media (max-width: 768px) {
+    border-radius: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 1rem;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+  }
 `;
 
 export const PrimaryButton = forwardRef<HTMLButtonElement, ButtonProps>(
