@@ -4,7 +4,7 @@
       "jest",
       "@testing-library/jest-dom"
     ],
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -25,9 +25,14 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "public/**.js",
+    "config-overrides.mjs",
+    "config-overrides.js",
+    "babel.config.js",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "build"
   ]
 }

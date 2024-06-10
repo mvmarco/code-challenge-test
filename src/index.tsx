@@ -6,13 +6,13 @@ import { App } from './App';
 import { worker } from './mocks/mocks';
 
 async function enableMocking() {
-  const serviceWorkerUrl = process.env.NODE_ENV === 'development' ? '/public/mockServiceWorker.js' : `${process.env.PUBLIC_URL}/mockServiceWorker.js`;
-
-  console.log('Service Worker URL:', serviceWorkerUrl);
-
+  const serviceWorkerUrl = `${process.env.PUBLIC_URL}/mockServiceWorker.js`;
   return worker.start({
     serviceWorker: {
       url: serviceWorkerUrl,
+      options: {
+        scope: process.env.PUBLIC_URL,
+      },
     },
     onUnhandledRequest: 'bypass',
   });
