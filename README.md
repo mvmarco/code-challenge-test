@@ -12,6 +12,10 @@ This application allows users to manage images through a grid view with paginati
 - **No Data or No Search View:** Displays appropriate messages when there are no images or no search results.
 - **Storybook Implementation:** Storybook has been implemented following the atomic structure.
 
+## Storybook
+
+- **Storybook Implementation:** Storybook has been implemented following the atomic structure.
+
 ## Setup and Installation
 
 1. **Clone the repository:**
@@ -25,6 +29,10 @@ This application allows users to manage images through a grid view with paginati
    ```npm start```
 4. **Run StoryBook:**
    ```npm run storybook```
+
+## Deployment with GitHub Pages
+- **Link:** .....
+
 
 ## Limitations and Challenges
 
