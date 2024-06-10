@@ -29,7 +29,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build  # Change this if your build output directory is different
-name: Deploy to GitHub Pages
+        name: Deploy to GitHub Pages
 
 on:
   push:
