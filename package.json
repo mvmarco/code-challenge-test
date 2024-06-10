@@ -1,5 +1,6 @@
 {
   "name": "code-challenge-test",
+  "homepage": "https://mvmarco.github.io/code-challenge-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -79,6 +80,7 @@
     "eslint-plugin-json": "^4.0.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-storybook": "^0.8.0",
+    "gh-pages": "^6.1.1",
     "isomorphic-fetch": "^3.0.0",
     "msw": "^2.3.1",
     "prettier": "^3.3.1",
