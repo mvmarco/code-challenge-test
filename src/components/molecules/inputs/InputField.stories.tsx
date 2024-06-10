@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 
-import { InputField, InputFieldProps } from '.';
+import { InputField, InputFieldProps } from './InputField';
+
 
 export default {
   title: 'Molecules/InputField',
