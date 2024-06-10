@@ -14,7 +14,7 @@ module.exports = function override(config, env) {
       patterns: [
         {
           from: "./public/mockServiceWorker.js",
-          to: "./",
+          to: env === "production" ? "./code-challenge-test" : "./",
         },
       ],
     })
