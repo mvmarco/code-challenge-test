@@ -8,7 +8,7 @@ import { Images } from '../components/pages/images';
 
 const AppRouter:FC = () => {
   return (
-    <BrowserRouter basename="/code-challenge-test">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Images />} />
       </Routes>
