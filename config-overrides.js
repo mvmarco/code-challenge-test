@@ -1,3 +1,4 @@
+const path = require("path");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
@@ -46,6 +47,14 @@ module.exports = function override(config, env) {
       }
     });
   }
+
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    "@components": path.resolve(__dirname, "src/components"),
+    "@pages": path.resolve(__dirname, "src/components/pages"),
+    "@molecules": path.resolve(__dirname, "src/components/molecules"),
+    "@atoms": path.resolve(__dirname, "src/components/atoms"),
+  };
 
   return config;
 };
