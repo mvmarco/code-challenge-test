@@ -4,10 +4,12 @@ const CopyPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = function override(config, env) {
+  // Remove ModuleScopePlugin to allow imports from outside src
   config.resolve.plugins = config.resolve.plugins.filter(
     (plugin) => !(plugin instanceof ModuleScopePlugin)
   );
 
+  // Add CopyPlugin to copy the mockServiceWorker.js
   config.plugins.push(
     new CopyPlugin({
       patterns: [
@@ -22,6 +24,7 @@ module.exports = function override(config, env) {
     })
   );
 
+  // Add ReactRefreshWebpackPlugin in development
   if (env === "development") {
     config.plugins.push(new ReactRefreshWebpackPlugin());
 
@@ -47,15 +50,6 @@ module.exports = function override(config, env) {
       }
     });
   }
-
-  config.resolve.alias = {
-    ...config.resolve.alias,
-    "@components": path.resolve(__dirname, "src/components"),
-    "@pages": path.resolve(__dirname, "src/components/pages"),
-    "@molecules": path.resolve(__dirname, "src/components/molecules"),
-    "@atoms": path.resolve(__dirname, "src/components/atoms"),
-    "@images": path.resolve(__dirname, "src/components/pages/images"),
-  };
 
   return config;
 };
