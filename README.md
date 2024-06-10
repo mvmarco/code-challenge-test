@@ -10,6 +10,7 @@ This application allows users to manage images through a grid view with paginati
 - **Form for Adding Images:** Add new images with a form (title, description, image path).
 - **Responsive:** Ensures a great experience on both desktop and mobile devices.
 - **No Data or No Search View:** Displays appropriate messages when there are no images or no search results.
+- **Storybook Implementation:** Storybook has been implemented following the atomic structure.
 
 ## Setup and Installation
 
