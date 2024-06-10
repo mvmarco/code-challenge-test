@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 
-import { Images } from '../components/pages/images/index';
+import { Images } from '../components/pages/images/Images';
+
 
 
 
