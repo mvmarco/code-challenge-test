@@ -18,3 +18,14 @@ This application allows users to manage images through a grid view with paginati
    git clone https://github.com/your-username/your-repo.git
    cd your-repo
    ```
+2. **Install dependencies:**
+   ```npm install```
+3. **Start the development server:**
+   ```npm start```
+4. **Run StoryBook:**
+   ```npm run storybook```
+
+## Limitations and Challenges
+
+- Vite Compatibility: I could not use Vite due to an unresolved conflict with msw.
+- Testing: I faced issues with configuring the tests and was unable to resolve them within the given time frame. As a result, test coverage is incomplete.
