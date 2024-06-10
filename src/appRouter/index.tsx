@@ -1,18 +1,13 @@
 import { FC } from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 
-import { Images } from '../components/pages/images/Images';
-
-
-
-
-
+import { ImageList } from '../components/pages/images/ImageList';
 
 const AppRouter:FC = () => {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<Images />} />
+        <Route path="/" element={<ImageList />} />
       </Routes>
     </HashRouter>
   );

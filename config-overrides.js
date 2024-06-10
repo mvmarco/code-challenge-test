@@ -54,6 +54,7 @@ module.exports = function override(config, env) {
     "@pages": path.resolve(__dirname, "src/components/pages"),
     "@molecules": path.resolve(__dirname, "src/components/molecules"),
     "@atoms": path.resolve(__dirname, "src/components/atoms"),
+    "@images": path.resolve(__dirname, "src/components/pages/images"),
   };
 
   return config;

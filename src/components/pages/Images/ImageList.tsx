@@ -24,7 +24,7 @@ const ContentContainer = styled.div`
   padding-bottom: 1.5rem;
 `;
 
-export const Images: FC = () => {
+export const ImageList: FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const itemsPerPage = 10;
