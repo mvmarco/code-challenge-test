@@ -34,10 +34,6 @@ This application allows users to manage images through a grid view with paginati
 4. **Run StoryBook:**
    ```npm run storybook```
 
-## Deployment with GitHub Pages
-- **Link:** .....
-
-
 ## Limitations and Challenges
 
 Despite the setup efforts, I encountered issues when trying to deploy the project. Below is a summary of the problems faced:
