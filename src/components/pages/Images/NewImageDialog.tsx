@@ -11,7 +11,7 @@ import { useCreateImageMutation } from '../../../redux/api/imagesSlice';
 import { SecondaryButton } from '../../atoms/buttons/SecondaryButton';
 import { setFormErrors } from '../../../utils/formHelpers';
 import { PrimaryButton } from '../../atoms/buttons/PrimaryButton';
-import { InputField } from '../../molecules/inputField';
+import { InputField } from '../../molecules/inputField/index';
 
 const schema = yup
   .object({
