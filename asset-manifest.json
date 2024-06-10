@@ -1,7 +1,7 @@
 {
   "files": {
     "main.js": "/code-challenge-test/static/js/main.c18df047.js",
-    "mockServiceWorker.js": "/code-challenge-test/mockServiceWorker.js",
+    "code-challenge-test/mockServiceWorker.js": "/code-challenge-test/code-challenge-test/mockServiceWorker.js",
     "index.html": "/code-challenge-test/index.html",
     "main.c18df047.js.map": "/code-challenge-test/static/js/main.c18df047.js.map"
   },
