@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import { Images } from '../components/pages/images';
 
@@ -8,11 +8,11 @@ import { Images } from '../components/pages/images';
 
 const AppRouter:FC = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Images />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
